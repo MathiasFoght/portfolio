@@ -1,0 +1,141 @@
+.wrapperContact {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 80px 0;
+}
+
+.contactContainer {
+    width: 100%;
+    max-width: 1980px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.contactContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contactHeader {
+    font-size: 100px;
+    font-weight: bold;
+    color: #c3daff;
+}
+
+.contactSubheader {
+    font-size: 20px;
+    margin-top: 0px;
+    color: #c3daff;
+}
+
+.linkedinIcon {
+    color: #505050;
+    margin-top: 20px;
+}
+
+.linkedinIcon:hover {
+    transition: all 0.6s;
+    transform: scale(1.1);
+    color: white;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.formInputMaterial {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.formControlMaterial {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: white;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+}
+
+.formControlMaterial:hover {
+    border-bottom: 1px solid #c3daff;
+}
+
+.formControlMaterial.error {
+    border-bottom: 1px solid rgb(249, 69, 69);
+}
+
+.formInputMaterial label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #ffffff;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+.formInputMaterial .formControlMaterial:focus ~ label,
+.formInputMaterial .formControlMaterial:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 14px;
+    color: #c3daff;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 24px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    border-color: white;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.successText {
+    color: #56ff8e !important;
+    border-color: #56ff8e !important;
+}
+
+@media (max-width: 860px) {
+    .wrapperContact {
+        padding: 40px 0;
+    }
+    .contactContainer {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 0 20px;
+    }
+    .contactContent {
+        align-items: center;
+        text-align: center;
+    }
+    .contactHeader {
+        font-size: 50px;
+    }
+}
