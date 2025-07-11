@@ -1,0 +1,95 @@
+.footer {
+    background-color: #19191C;
+    color: #ffffff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1980px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .gridContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.heading {
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.linksGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.subHeading {
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+    color: #ffffff;
+}
+
+.copyrightSection {
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.copyrightText {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .copyrightText {
+        text-align: left;
+    }
+}
