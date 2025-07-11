@@ -10,7 +10,7 @@ const navItems = [
     { label: "Hello", sectionId: "home" },
     { label: "About", sectionId: "about" },
     { label: "Projects", sectionId: "projects" },
-    { label: "Techstack", sectionId: "tech" },
+    { label: "Techstack", sectionId: "techstack" },
     { label: "Contact", sectionId: "contact" },
 ];
 
@@ -23,7 +23,7 @@ export function Navbar() {
     const tabsRef = useRef<Map<string, HTMLButtonElement>>(new Map());
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Update indicator style for desktop view
+    // Function to handle resizing and update indicator position
     useEffect(() => {
         if (!isMobile) {
             const activeTab = tabsRef.current.get(activeItem);
@@ -64,17 +64,17 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Sync body scroll and close menu on desktop
+    // Handle menu open/close for mobile
     useEffect(() => {
-        // Prevent body scroll when menu open on mobile
         document.body.style.overflow = isMenuOpen && isMobile ? 'hidden' : 'auto';
 
-        // Close mobile menu when switching to desktop
+        // Switching to desktop
         if (!isMobile) {
             setIsMenuOpen(false);
         }
     }, [isMenuOpen, isMobile]);
 
+    // Handle click on nav item
     const handleClick = (item: typeof navItems[0]) => {
         setActiveItem(item.label);
         setIsMenuOpen(false);
