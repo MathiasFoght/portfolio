@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee"
 import Image from "next/image"
 import styles from "./styles.module.css"
 
-export const graphicsPath = [
+export const assetsPaths = [
     "Azure.svg",
     "Azure SQL.svg",
     "Bash.svg",
@@ -43,7 +43,7 @@ const displayNames: Record<string, string> = {
     "Dotnet.svg": ".NET 8.0",
 };
 
-const technologiesData: Technology[] = graphicsPath.map((file) => ({
+const technologiesData: Technology[] = assetsPaths.map((file) => ({
     name: displayNames[file] || file.replace(".svg", ""),
     icon: `/graphics/${file}`,
 }));
