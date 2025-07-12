@@ -45,7 +45,7 @@ const displayNames: Record<string, string> = {
 
 const technologiesData: Technology[] = assetsPaths.map((file) => ({
     name: displayNames[file] || file.replace(".svg", ""),
-    icon: `/graphics/${file}`,
+    icon: `/assets/${file}`,
 }));
 
 const extendedTechnologies = [...technologiesData, ...technologiesData]
