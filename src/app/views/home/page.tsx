@@ -31,6 +31,16 @@ const HomePage: React.FC = () => {
                         <div className={styles.typewriterContainer}>
                             <TypewriterEffect />
                         </div>
+                    </div>
+                    <div className={styles.positionInfo}>
+                        <p className={styles.positionText}>
+                            <strong>Current Position</strong><br />
+                            Fullstack Student Developer<br/>WEXO A/S
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.bottomContent}>
+                    <div className={styles.contentContainer}>
                         <h2 className={styles.subtitle}>Software Engineer</h2>
                         <p className={styles.description}>
                             Hi, I&#39;m a software engineering student at Aarhus University. I&#39;m passionate about developing software.
@@ -38,6 +48,12 @@ const HomePage: React.FC = () => {
                             <br />
                             Check out my projects and feel free to contact me.
                         </p>
+                        <div className={styles.positionInfoMobile}>
+                            <p className={styles.positionText}>
+                                <strong>Current Position</strong><br />
+                                Fullstack Student Developer<br/>WEXO A/S
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>
