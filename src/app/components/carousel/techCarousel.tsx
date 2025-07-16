@@ -64,6 +64,7 @@ const TrustedBySection: React.FC = () => {
                                 height={32}
                                 className={styles.icon}
                                 aria-hidden="true"
+                                priority={true}
                             />
                         </div>
                         <span className={styles.name}>{tech.name}</span>
