@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Squeeze as Hamburger } from 'hamburger-react';
-import { ArrowRight } from 'lucide-react';
+import { Cross as Hamburger } from 'hamburger-react'
+import { SlArrowRight } from "react-icons/sl";
 import { useMobile } from "@/app/hooks/useMobile";
 import styles from "./styles.module.css";
 
@@ -122,9 +122,6 @@ export function Navbar() {
             )}
             {isMobile && isMenuOpen && (
                 <div className={styles['mobile-menu-overlay']}>
-                    <div className={styles['mobile-header']}>
-                        <h1 className={styles['mobile-logo']}>Mathias Foght</h1>
-                    </div>
                     <nav className={styles['mobile-nav']}>
                         {navItems.map((item, index) => (
                             <button
@@ -138,7 +135,7 @@ export function Navbar() {
                                 }}
                             >
                                 <span className={styles['mobile-nav-text']}>{item.label}</span>
-                                <ArrowRight className={styles['mobile-nav-icon']} size={20} />
+                                <SlArrowRight className={styles['mobile-nav-icon']} size={20} />
                             </button>
                         ))}
                     </nav>
