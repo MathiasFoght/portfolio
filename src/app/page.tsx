@@ -1,5 +1,3 @@
-"use client";
-
 import Home from "@/app/views/home/page";
 import About from "@/app/views/about/page";
 import Projects from "@/app/views/projects/page";
