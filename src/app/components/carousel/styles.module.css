@@ -3,7 +3,7 @@
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-.techItem {
+.item {
     flex-shrink: 0;
     margin: 0 1.5rem;
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 768px) {
-    .techItem {
+    .item {
         margin: 0 2.5rem;
     }
 }
@@ -52,7 +52,7 @@
     }
 }
 
-.techItem:hover .icon,
-.techItem:hover .name {
+.item:hover .icon,
+.item:hover .name {
     opacity: 1;
 }
