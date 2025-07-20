@@ -8,10 +8,10 @@ const About: React.FC = () => {
         <div id="about" className={styles.wrapper} >
             <div className={styles.expertiseSection}>
                 <h2>
-                    Knowledge and expertise  <br/> <span className={styles.highlight}>Focused on clean code</span>
+                    My Developer Toolkit  <br/> <span className={styles.highlight}>Knowledge and expertise</span>
                 </h2>
                 <p>
-                    As a student, I explore a wide range of technologies showcased here.
+                    A peek under the hood of my tech stack.
                 </p>
             </div>
             <Carousel dataPath={data} />
