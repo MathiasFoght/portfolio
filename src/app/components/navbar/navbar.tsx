@@ -8,9 +8,9 @@ import styles from "./styles.module.css";
 
 const navItems = [
     { label: "Hello", sectionId: "home" },
+    { label: "Techstack", sectionId: "techstack" },
     { label: "About", sectionId: "about" },
     { label: "Projects", sectionId: "projects" },
-    { label: "Techstack", sectionId: "techstack" },
     { label: "Contact", sectionId: "contact" },
 ];
 

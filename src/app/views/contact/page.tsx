@@ -47,6 +47,9 @@ const ContactSection: React.FC = () => {
     if (name === "email" && !/^\S+@\S+\.\S+$/.test(value)) {
       return true
     }
+    else if (name === "phone" && !/^\+?[0-9\s-]+$/.test(value)) {
+        return true
+    }
     return false
   }
 

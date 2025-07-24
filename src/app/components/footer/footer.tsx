@@ -13,12 +13,12 @@ function Footer() {
                             <h3 className={styles.subHeading}>Community</h3>
                             <ul className={styles.linkList}>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="https://github.com/MathiasFoght?tab=repositories" className={styles.link}>
                                         GitHub
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="https://gitlab.au.dk/dashboard/projects/member" className={styles.link}>
                                         GitLab
                                     </a>
                                 </li>
@@ -28,22 +28,22 @@ function Footer() {
                             <h3 className={styles.subHeading}>Connect</h3>
                             <ul className={styles.linkList}>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="https://www.linkedin.com/in/mathias-foght-549197252/" className={styles.link}>
                                         LinkedIn
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="https://www.instagram.com/mathias_foght/" className={styles.link}>
                                         Instagram
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="https://www.facebook.com/mathias.foght" className={styles.link}>
                                         Facebook
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.link}>
+                                    <a href="mailto:mathiasfoght98@gmail.com" className={styles.link}>
                                         Email
                                     </a>
                                 </li>
