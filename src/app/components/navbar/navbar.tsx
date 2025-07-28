@@ -7,11 +7,11 @@ import { useMobile } from "@/app/hooks/useMobile";
 import styles from "./styles.module.css";
 
 const navItems = [
-    { label: "Hello", sectionId: "home" },
-    { label: "Techstack", sectionId: "techstack" },
-    { label: "About", sectionId: "about" },
-    { label: "Projects", sectionId: "projects" },
-    { label: "Contact", sectionId: "contact" },
+    { label: "Hello", sectionId: "home", path: "/" },
+    { label: "Techstack", sectionId: "techstack", path: "/techstack" },
+    { label: "About", sectionId: "about", path: "/about" },
+    { label: "Projects", sectionId: "projects", path: "/projects" },
+    { label: "Contact", sectionId: "contact", path: "/contact" },
 ];
 
 export function Navbar() {
@@ -58,6 +58,37 @@ export function Navbar() {
                 }
             });
             setActiveItem(closestSection.label);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Update scroll handler in useEffect
+    useEffect(() => {
+        let lastPath = window.location.pathname;
+        const handleScroll = () => {
+            let closestSection = navItems[0];
+            let minDistance = Infinity;
+
+            navItems.forEach((item) => {
+                const section = document.getElementById(item.sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top - 100);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestSection = item;
+                    }
+                }
+            });
+            setActiveItem(closestSection.label);
+
+            // Only update URL if path is different
+            if (window.location.pathname !== closestSection.path) {
+                window.history.replaceState(null, "", closestSection.path);
+                lastPath = closestSection.path;
+            }
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
