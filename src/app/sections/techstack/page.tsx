@@ -3,7 +3,7 @@ import Carousel from "@/app/components/carousel/carousel";
 import styles from "./styles.module.css";
 import { data } from "@/data/carousel/techData";
 
-const Techstack: React.FC = () => {
+const TechstackSection: React.FC = () => {
     return (
         <div id="techstack" className={styles.wrapper} >
             <div className={styles.expertiseSection}>
@@ -19,4 +19,4 @@ const Techstack: React.FC = () => {
     );
 }
 
-export default Techstack;
+export default TechstackSection;

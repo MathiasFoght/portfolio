@@ -1,17 +1,17 @@
-import Home from "@/app/views/home/page";
-import Techstack from "@/app/views/techstack/page";
-import Projects from "@/app/views/projects/page";
-import Contact from "@/app/views/contact/page";
-import About from "@/app/views/about/page";
+import HomeSection from "@/app/sections/home/page";
+import TechstackSection from "@/app/sections/techstack/page";
+import AboutSection from "@/app/sections/about/page";
+import ProjectsSection from "@/app/sections/projects/page";
+import ContactSection from "@/app/sections/contact/page";
 
 export default function Initialize() {
   return (
     <div>
-        <Home />
-        < Techstack />
-        < About />
-        < Projects />
-        < Contact />
+        <HomeSection />
+        < TechstackSection/>
+        < AboutSection />
+        < ProjectsSection />
+        < ContactSection />
     </div>
   );
 }

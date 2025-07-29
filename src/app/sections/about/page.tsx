@@ -1,6 +1,6 @@
 import type React from "react";
 
-const About: React.FC = () => {
+const AboutSection: React.FC = () => {
     return (
         <div id="about" style={{height: "100vh", background: "black"}}>
             <h1>About</h1>
@@ -8,4 +8,4 @@ const About: React.FC = () => {
     );
 }
 
-export default About;
+export default AboutSection;

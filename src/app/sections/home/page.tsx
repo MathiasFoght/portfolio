@@ -4,7 +4,7 @@ import type React from "react"
 import Typewriter from "typewriter-effect"
 import styles from "./styles.module.css"
 
-const HomePage: React.FC = () => {
+const HomeSection: React.FC = () => {
     const TypewriterEffect = () => (
         <Typewriter
             options={{
@@ -61,4 +61,4 @@ const HomePage: React.FC = () => {
     )
 }
 
-export default HomePage
+export default HomeSection
