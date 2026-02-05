@@ -10,6 +10,15 @@ type ContactPayload = {
   message: string;
 };
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -42,6 +51,54 @@ export async function POST(request: Request) {
       );
     }
 
+    const safeName = escapeHtml(body.name);
+    const safeEmail = escapeHtml(body.email);
+    const safePhone = escapeHtml(body.phone || "-");
+    const safeMessage = escapeHtml(body.message);
+
+    const html = `
+      <div style="margin:0;padding:0;background:#f2f5f8;">
+        <div style="max-width:600px;margin:0 auto;padding:28px 20px 36px;">
+          <div style="background:#ffffff;border-radius:12px;padding:24px 24px 20px;border:1px solid rgba(0,0,0,0.06);">
+            <div style="font-family:Arial, sans-serif;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#5a5a5a;">
+              New portfolio inquiry
+            </div>
+            <div style="height:1px;background:rgba(0,0,0,0.08);margin:16px 0 18px;"></div>
+
+            <table style="width:100%;border-collapse:collapse;font-family:Arial, sans-serif;color:#121212;">
+              <tr>
+                <td style="padding:6px 0;width:120px;color:#5a5a5a;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">Name</td>
+                <td style="padding:6px 0;font-size:15px;">${safeName}</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 0;color:#5a5a5a;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">Email</td>
+                <td style="padding:6px 0;font-size:15px;">
+                  <a href="mailto:${safeEmail}" style="color:#2067ff;text-decoration:none;">${safeEmail}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:6px 0;color:#5a5a5a;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">Phone</td>
+                <td style="padding:6px 0;font-size:15px;">${safePhone}</td>
+              </tr>
+            </table>
+
+            <div style="margin-top:18px;border:1px solid rgba(0,0,0,0.08);background:#f7f7f7;border-radius:10px;padding:16px;">
+              <div style="font-family:Arial, sans-serif;color:#5a5a5a;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;">
+                Message
+              </div>
+              <div style="font-family:Arial, sans-serif;color:#121212;font-size:14px;line-height:1.5;white-space:pre-wrap;">
+                ${safeMessage}
+              </div>
+            </div>
+
+            <div style="margin-top:18px;font-family:Arial, sans-serif;color:#5a5a5a;font-size:12px;">
+              Sent via your portfolio contact form.
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
     await resend.emails.send({
       from,
       to,
@@ -52,6 +109,7 @@ export async function POST(request: Request) {
         `Email: ${body.email}\n` +
         `Phone: ${body.phone || "-"}\n\n` +
         `${body.message}`,
+      html,
     });
 
     return NextResponse.json({ ok: true });
