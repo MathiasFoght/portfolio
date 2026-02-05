@@ -30,14 +30,14 @@ export async function POST(request: Request) {
     if (!body?.name || !body?.email || !body?.message) {
       return NextResponse.json(
         { error: "Name, email, and message are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!isValidEmail(body.email)) {
       return NextResponse.json(
         { error: "Please provide a valid email address." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
     if (!from) {
       return NextResponse.json(
         { error: "Missing RESEND_FROM configuration." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
             </div>
 
             <div style="margin-top:18px;font-family:Arial, sans-serif;color:#5a5a5a;font-size:12px;">
-              Sent via your portfolio contact form.
+              Sent from <a href="https://mathiasfoght.com" style="color:#2067ff;text-decoration:none;">mathiasfoght.com</a>
             </div>
           </div>
         </div>
