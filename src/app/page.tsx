@@ -1,17 +1,19 @@
-import HomeSection from '@/app/sections/home/page';
-import TechstackSection from '@/app/sections/techstack/page';
-import AboutSection from '@/app/sections/about/page';
-import ProjectsSection from '@/app/sections/projects/page';
-import ContactSection from '@/app/sections/contact/page';
+import React from "react";
+import HomeSection from "@/app/sections/home/HomeSection";
+import TechStackSection from "@/app/sections/techstack/TechStackSection";
+import AboutSection from "@/app/sections/about/AboutSection";
+import ProjectsSection from "@/app/sections/projects/ProjectsSection";
+import ContactSection from "@/app/sections/contact/ContactSection";
+import styles from "./page.module.css";
 
 export default function Initialize() {
-     return (
-          <div>
-               <HomeSection />
-               <TechstackSection />
-               <AboutSection />
-               <ProjectsSection />
-               <ContactSection />
-          </div>
-     );
+  return (
+    <div className={styles.main}>
+      <HomeSection />
+      <TechStackSection />
+      <AboutSection />
+      <ProjectsSection />
+      <ContactSection />
+    </div>
+  );
 }

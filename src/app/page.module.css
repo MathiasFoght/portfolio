@@ -1,0 +1,6 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 8vw, 7rem);
+    padding: 6rem clamp(1.5rem, 5vw, 5rem) 6rem;
+}
