@@ -81,7 +81,6 @@ export default function ContactSection() {
             Looking for a software engineer? You’re welcome to reach out via the
             email below.
           </p>
-          <a href="mailto:mathiasfoght98@gmail.com">mathiasfoght98@gmail.com</a>
           <div className={styles.contactLinks}>
             <a
               className={styles.contactLink}
@@ -100,7 +99,7 @@ export default function ContactSection() {
               GitHub
             </a>
             <a className={styles.contactLink} href="tel:25156137">
-              Call me
+              Direct
             </a>
           </div>
           <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -121,7 +120,7 @@ export default function ContactSection() {
                   id="contact-email"
                   name="email"
                   type="email"
-                  placeholder="you@email.com"
+                  placeholder="you@mail.com"
                   required
                 />
               </div>
@@ -156,7 +155,7 @@ export default function ContactSection() {
                 ? message
                 : status === "sending"
                   ? "Sending..."
-                  : "Send message"}
+                  : "Send"}
             </button>
             {status === "error" && message ? (
               <p className={styles.errorMessage} role="status">
