@@ -79,7 +79,7 @@ export default function ContactSection() {
           />
           <p>
             Looking for a software engineer? You’re welcome to reach out via the
-            email below.
+            form below.
           </p>
           <div className={styles.contactLinks}>
             <a
