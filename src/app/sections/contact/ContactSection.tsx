@@ -103,6 +103,18 @@ export default function ContactSection() {
     const { name, value } = event.currentTarget;
     if (!FIELD_NAMES.includes(name as FieldName)) return;
     const field = name as FieldName;
+    const trimmed = value.trim();
+
+    // Do not show field-level required errors on blur for empty values.
+    if (!trimmed) {
+      setErrors((prev) => {
+        if (!prev[field]) return prev;
+        const { [field]: _removed, ...rest } = prev;
+        return rest;
+      });
+      return;
+    }
+
     const error = validateField(field, value);
 
     setErrors((prev) => {

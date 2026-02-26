@@ -2,5 +2,23 @@
     display: flex;
     flex-direction: column;
     gap: clamp(4rem, 8vw, 7rem);
-    padding: 6rem clamp(1.5rem, 5vw, 5rem) 6rem;
+    padding: 6rem clamp(1.5rem, 5vw, 5rem) 0;
+}
+
+.mobileFullBleed {
+    width: 100%;
+}
+
+.fullBleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+@media (max-width: 768px) {
+    .mobileFullBleed {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
 }

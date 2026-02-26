@@ -7,7 +7,6 @@
     padding: clamp(2rem, 5vw, 3rem);
     background: #111111;
     color: #f8f7f2;
-    clip-path: polygon(0 0, 98% 0, 100% 8%, 100% 100%, 2% 100%, 0 92%);
     display: grid;
     gap: 1rem;
 }
@@ -126,4 +125,18 @@
     color: #ffb4a2;
     font-family: var(--font-mono);
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .contactPanel {
+        width: 100%;
+    }
+
+    .contactForm {
+        width: 100%;
+    }
+
+    .fieldRow {
+        grid-template-columns: 1fr;
+    }
 }

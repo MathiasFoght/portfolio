@@ -9,11 +9,15 @@ import styles from "./page.module.css";
 export default function Initialize() {
   return (
     <div className={styles.main}>
-      <HomeSection />
+      <div className={styles.mobileFullBleed}>
+        <HomeSection />
+      </div>
       <TechStackSection />
       <AboutSection />
       <ProjectsSection />
-      <ContactSection />
+      <div className={`${styles.mobileFullBleed} ${styles.fullBleed}`}>
+        <ContactSection />
+      </div>
     </div>
   );
 }
