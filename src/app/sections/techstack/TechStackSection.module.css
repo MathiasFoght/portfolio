@@ -13,6 +13,7 @@
 .sectionLead {
     color: var(--muted);
     max-width: 40rem;
+    margin-bottom: 1.5rem;
 }
 
 .techGrid {
