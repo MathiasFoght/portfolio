@@ -55,7 +55,6 @@ const PROJECTS: Project[] = [
       "LangChain",
       "PostgreSQL",
       "Oxylabs Web Scraper API",
-      "LangChain",
       "OpenAI API",
       "Docker",
     ],
