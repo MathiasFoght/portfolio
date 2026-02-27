@@ -34,10 +34,31 @@ const PROJECTS: Project[] = [
   },
   {
     id: "4",
-    title: "AI-Powered Tourist Guide",
+    title: "AI-powered anything scraper",
     description:
-      "AI-powered mobile app that analyzes images of attractions and provides detailed descriptions in Danish/English. Includes a follow-up chat allowing users to ask additional questions and explore the attraction in more depth.",
-    technologies: ["React Native", "TypeScript", "Expo Go", "OpenAI API"],
+      "This project turns web pages into useful data in seconds. Enter a URL, scrape the fully rendered page and ask an AI to extract exactly what you care about using natural-language instructions.",
+    technologies: [
+      "Python",
+      "LangChain",
+      "OpenAI API",
+      "Bright Data Scraping Browser",
+      "Streamlit",
+    ],
+  },
+  {
+    id: "5",
+    title: "Amazon product intelligence",
+    description:
+      "Tool for scraping Amazon product data via Oxylabs Web Scraper API, storing products in a database with integrated price history tracking, identifying competitors, and generating AI-based competitor analysis",
+    technologies: [
+      "Python",
+      "LangChain",
+      "PostgreSQL",
+      "Oxylabs Web Scraper API",
+      "LangChain",
+      "OpenAI API",
+      "Docker",
+    ],
   },
 ];
 
