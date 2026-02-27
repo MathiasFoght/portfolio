@@ -1,15 +1,19 @@
 .hero {
     position: relative;
     padding: clamp(2rem, 5vw, 4rem);
-    background: linear-gradient(135deg, #ffffff 0%, #409cff3d 100%);
+    background: transparent;
     overflow: hidden;
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    inset: -40%;
-    animation: sweep 14s linear infinite;
+    inset: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #409cff3d 100%);
+    opacity: 0;
+    animation: heroBackgroundFade 1600ms ease-out 250ms forwards;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .heroGrid {
@@ -120,12 +124,12 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
-@keyframes sweep {
+@keyframes heroBackgroundFade {
     from {
-        transform: rotate(0deg);
+        opacity: 0;
     }
     to {
-        transform: rotate(360deg);
+        opacity: 1;
     }
 }
 
@@ -156,5 +160,6 @@
 @media (prefers-reduced-motion: reduce) {
     .hero::before {
         animation: none;
+        opacity: 1;
     }
 }
