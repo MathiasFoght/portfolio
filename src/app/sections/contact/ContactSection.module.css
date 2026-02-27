@@ -64,7 +64,8 @@
     padding: 0.75rem 0.9rem;
     border-radius: 0.6rem;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    /* Prevent iOS Safari focus zoom on form fields */
+    font-size: 16px;
     text-transform: none;
     letter-spacing: 0;
 }
