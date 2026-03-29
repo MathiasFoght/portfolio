@@ -53,14 +53,9 @@ export default function HomeSection() {
             </div>
             <div className={styles.metaRow}>
               <span>CV</span>
-              <a
-                className={styles.metaLink}
-                href="/CV_Mathias_Foght.pdf"
-                download
-                aria-label="Download CV"
-              >
+              <a className={styles.metaLink} href="/cv" aria-label="Open CV">
                 <DecryptedText
-                  text="Download"
+                  text="Open"
                   speed={120}
                   maxIterations={8}
                   sequential
